@@ -1,6 +1,8 @@
 ﻿#region ORM'siz Yaklaşım (SQL + Kod)
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using ORM_SQL_İzalasyonu.Models;
 
 ConfigurationManager configuration = new();
 configuration.AddJsonFile("appsettings.json");
@@ -30,8 +32,7 @@ await connection.CloseAsync();
 #endregion
 
 #region ORM'li Yaklaşım (SQL - Kod)
-using Microsoft.EntityFrameworkCore;
-using ORM_SQL_İzalasyonu.Models;
+
 
 NorthwindContext context = new();
 #region Kod 1
