@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 
 Console.WriteLine("Hello, World!");
 
+ECommerceDbContext context = new();
+await context.Database.MigrateAsync();
 public class ECommerceDbContext : DbContext
 {
     public DbSet<Customer> Customers { get; set; }
