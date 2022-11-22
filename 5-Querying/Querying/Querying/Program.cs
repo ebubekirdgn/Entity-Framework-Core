@@ -426,7 +426,6 @@ public class UrunParca
     public Urun Urun { get; set; }
     public Parca Parca { get; set; }
 }
-
 public class UrunDetay
 {
     public int Id { get; set; }
