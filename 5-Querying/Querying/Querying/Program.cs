@@ -108,12 +108,13 @@ ETicaretContext context = new();
 
 #region Method Syntax
 //var urunler = context.Urunler.Where(u => u.Id > 500 || u.UrunAdi.EndsWith("2")).OrderBy(u => u.UrunAdi);
-#endregion
-#region Query Syntax
+//#endregion
+//#region Query Syntax
 //var urunler2 = from urun in context.Urunler
-//               where urun.Id > 500 || urun.UrunAdi.StartsWith("2")
-//               orderby urun.UrunAdi
-//               select urun;
+//                   where urun.Id > 500 || urun.UrunAdi.StartsWith("2")
+//                   orderby urun.UrunAdi
+//                   select urun;
+
 #endregion
 
 //await urunler.ToListAsync();
