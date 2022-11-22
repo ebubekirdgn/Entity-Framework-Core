@@ -153,7 +153,8 @@ ETicaretContext context = new();
 #region SingleAsync
 //Eğer ki, sorgu neticesinde birden fazla veri geliyorsa ya da hiç gelmiyorsa her iki durumda da exception fırlatır.
 #region Tek Kayıt Geldiğinde
-//var urun = await context.Urunler.SingleAsync(u => u.Id == 55);
+//var urun = await context.Urunler.SingleAsync(u => u.Id == 3);
+//Console.WriteLine();
 #endregion
 #region Hiç Kayıt Gelmediğinde
 //var urun = await context.Urunler.SingleAsync(u => u.Id == 5555);
@@ -172,7 +173,9 @@ ETicaretContext context = new();
 //var urun = await context.Urunler.SingleOrDefaultAsync(u => u.Id == 5555);
 #endregion
 #region Çok Kayıt Geldiğinde
-//var urun = await context.Urunler.SingleOrDefaultAsync(u => u.Id > 55);
+var urun = await context.Urunler.SingleOrDefaultAsync(u => u.Id > 1);
+Console.WriteLine();
+
 #endregion
 #endregion
 
@@ -364,14 +367,14 @@ ETicaretContext context = new();
 //}).ToListAsync();
 #endregion
 #region Query Syntax
-var datas = await (from urun in context.Urunler
-                   group urun by urun.Fiyat
-            into @group
-                   select new
-                   {
-                       Fiyat = @group.Key,
-                       Count = @group.Count()
-                   }).ToListAsync();
+//var datas = await (from urun in context.Urunler
+//                   group urun by urun.Fiyat
+//            into @group
+//                   select new
+//                   {
+//                       Fiyat = @group.Key,
+//                       Count = @group.Count()
+//                   }).ToListAsync();
 #endregion
 #endregion
 
@@ -379,14 +382,14 @@ var datas = await (from urun in context.Urunler
 //Bir sorgulama fonksiyonu felan değildir!
 //Sorgulama neticesinde elde edilen koleksiyonel veriler üzerinde iterasyonel olarak dönmemizi ve teker teker verileri elde edip işlemler yapabilmemizi sağlayan bir fonksiyondur. foreach döngüsünün metot halidir!
 
-foreach (var item in datas)
-{
+//foreach (var item in datas)
+//{
 
-}
-datas.ForEach(x =>
-{
+//}
+//datas.ForEach(x =>
+//{
 
-});
+//});
 #endregion
 
 
