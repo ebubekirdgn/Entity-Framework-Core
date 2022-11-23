@@ -6,7 +6,7 @@
  
 > 2- Query Syntax<br>
  ``` var urunler2 = await (from urun in context.Urunler ```<br>
-                ``` select urun).ToListAsync();```
+                     ``` select urun).ToListAsync();```
                        
 ##  Sorguyu Execute Etmek İçin Ne Yapmamız Gerekmektedir?
 #region ToListAsync 
