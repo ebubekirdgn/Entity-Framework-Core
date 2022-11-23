@@ -1,10 +1,10 @@
 # Entity-Framework-Core
 
 ## En Temel Basit Bir Sorgulama Nasıl Yapılır?
- 1- Method Syntax<br>
+> 1- Method Syntax<br>
      ``` var urunler = await context.Urunler.ToListAsync(); ```
  
- 2- Query Syntax
+> 2- Query Syntax
  var urunler2 = await (from urun in context.Urunler <br>
                        select urun).ToListAsync();
  
