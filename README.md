@@ -1,7 +1,7 @@
 # Entity-Framework-Core
 
-#region En Temel Basit Bir Sorgulama Nasıl Yapılır?
-#region Method Syntax
+# region En Temel Basit Bir Sorgulama Nasıl Yapılır?
+## Method Syntax
 //var urunler = await context.Urunler.ToListAsync();
 #endregion
 #region Query Syntax
