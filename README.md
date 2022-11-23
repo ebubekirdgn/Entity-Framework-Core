@@ -4,9 +4,9 @@
 > 1- Method Syntax<br>
      ``` var urunler = await context.Urunler.ToListAsync(); ```
  
-> 2- Query Syntax
- var urunler2 = await (from urun in context.Urunler <br>
-                       select urun).ToListAsync();
+> 2- Query Syntax<br>
+ ``` var urunler2 = await (from urun in context.Urunler <br>
+                       select urun).ToListAsync(); ```
  
  
 
