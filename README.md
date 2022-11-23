@@ -1,16 +1,16 @@
 # Entity-Framework-Core
 
-# region En Temel Basit Bir Sorgulama Nasıl Yapılır?
-## Method Syntax
-//var urunler = await context.Urunler.ToListAsync();
-#endregion
-#region Query Syntax
-//var urunler2 = await (from urun in context.Urunler
-//                      select urun).ToListAsync();
-#endregion
-#endregion
+## En Temel Basit Bir Sorgulama Nasıl Yapılır?
+ 1- Method Syntax
+    //var urunler = await context.Urunler.ToListAsync();
+ 
+ 2- Query Syntax
+ var urunler2 = await (from urun in context.Urunler <br>
+                       select urun).ToListAsync();
+ 
+ 
 
-#region Sorguyu Execute Etmek İçin Ne Yapmamız Gerekmektedir?
+##  Sorguyu Execute Etmek İçin Ne Yapmamız Gerekmektedir?
 #region ToListAsync 
 #region Method Syntax
 //var urunler = await context.Urunler.ToListAsync();
