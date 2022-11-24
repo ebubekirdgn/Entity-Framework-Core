@@ -175,7 +175,9 @@ Yapılan sorguda tek bir verinin gelmesi amaçlanıyorsa First ya da FirstOrDefa
     UrunParca u = await context.UrunParca.FindAsync(2, 5);
 
 #### FindAsync İle SingleAsync, SingleOrDefaultAsync, FirstAsync, FirstOrDefaultAsync Fonksiyonlarının Karşılaştırması
-	RESİM GELECEK
+![alt yazı][resim]
+
+[resim]: https://github.com/ebubekirdgn/Entity-Framework-Core/blob/main/5-Querying/Querying/Querying/Find%20%C4%B0le%20Single%2C%20SingleOrDefault%2C%20First%2C%20FirstOrDefault%20Fonksiyonlar%C4%B1n%C4%B1%20Kar%C5%9F%C4%B1la%C5%9Ft%C4%B1rma.png "Resim Başlığı"
 
 
 #### LastAsync
