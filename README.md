@@ -1,3 +1,4 @@
+#Querying
 ### En Temel Basit Bir Sorgulama Nasıl Yapılır?
   1. Method Syntax
 > var urunler = await context.Urunler.ToListAsync();
