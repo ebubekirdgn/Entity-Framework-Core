@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Data.Entity;
-
+﻿using Microsoft.EntityFrameworkCore;
 ETicaretContext context = new();
 #region Change Tracking Neydi?
 //Context nesnesi üzerinden gelen tüm nesneler/veriler otomatik olarak bir takip mekanizması tarafından izlenirler. İşte bu takip mekanizmasına Change Tracker denir. Change Traker ile nesneler üzerindeki değişiklikler/işlemler takip edilerek netice itibariyle bu işlemlerin fıtratına uygun sql sorgucukları generate edilir. İşte bu işleme de Change Tracking denir. 
@@ -172,7 +170,7 @@ public class ETicaretContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False Database=ETicaretDB; ");
+        optionsBuilder.UseSqlServer("Data Source=DESKTOP-3DL43QU;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Database=ETicaretDB;");
     }
 
     public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
@@ -182,7 +180,7 @@ public class ETicaretContext : DbContext
         {
             if (entry.State == EntityState.Added)
             {
-
+                
             }
         }
         return base.SaveChangesAsync(cancellationToken);
