@@ -22,7 +22,6 @@ ETicaretContext context = new();
 //select urun).ToListAsync();
 #endregion
 #endregion
-
 //int urunId = 5;
 //string urunAdi = "2";
 
@@ -37,7 +36,6 @@ ETicaretContext context = new();
 //{
 //    Console.WriteLine(urun.UrunAdi);
 //}
-
 //await urunler.ToListAsync();
 
 #region Foreach
@@ -170,9 +168,7 @@ ETicaretContext context = new();
 //var urun = await context.Urunler.SingleOrDefaultAsync(u => u.Id == 5555);
 #endregion
 #region Çok Kayıt Geldiğinde
-var urun = await context.Urunler.SingleOrDefaultAsync(u => u.Id > 1);
-Console.WriteLine();
-
+//var urun = await context.Urunler.SingleOrDefaultAsync(u => u.Id > 1);
 #endregion
 #endregion
 
