@@ -1,0 +1,5 @@
+C:\Users\codemachine\Documents\GitHub\Entity-Framework-Core\6-Change-Tracker\ChangeTracker\ChangeTracker\obj\Debug\net7.0\ChangeTracker.csproj.AssemblyReference.cache
+C:\Users\codemachine\Documents\GitHub\Entity-Framework-Core\6-Change-Tracker\ChangeTracker\ChangeTracker\obj\Debug\net7.0\ChangeTracker.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\codemachine\Documents\GitHub\Entity-Framework-Core\6-Change-Tracker\ChangeTracker\ChangeTracker\obj\Debug\net7.0\ChangeTracker.AssemblyInfoInputs.cache
+C:\Users\codemachine\Documents\GitHub\Entity-Framework-Core\6-Change-Tracker\ChangeTracker\ChangeTracker\obj\Debug\net7.0\ChangeTracker.AssemblyInfo.cs
+C:\Users\codemachine\Documents\GitHub\Entity-Framework-Core\6-Change-Tracker\ChangeTracker\ChangeTracker\obj\Debug\net7.0\ChangeTracker.csproj.CoreCompileInputs.cache
