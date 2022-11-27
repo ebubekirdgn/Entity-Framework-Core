@@ -64,7 +64,7 @@ IQueryable çalışmalarında ilgili kod yazıldığı noktada tetiklenmez/çal�
     var datas = await urunler.ToListAsync();
  
 
-### Where
+### b.Where
  Oluşturulan sorguya where şartı eklememizi sağlayan bir fonksiyondur.
 
 ### Method Syntax
@@ -81,7 +81,7 @@ IQueryable çalışmalarında ilgili kod yazıldığı noktada tetiklenmez/çal�
     var data = await urunler.ToListAsync();
     Console.WriteLine();
  
-### OrderBy
+### c.OrderBy
 //Sorgu üzerinde sıralama yapmamızı sağlayan bir fonksiyondur. (Ascending)
 
 ### Method Syntax
@@ -99,13 +99,13 @@ IQueryable çalışmalarında ilgili kod yazıldığı noktada tetiklenmez/çal�
     await urunler2.ToListAsync();
  
 
-### ThenBy
+### d.ThenBy
 OrderBy üzerinde yapılan sıralama işlemini farklı kolonlarada uygulamamızı sağlayan bir fonksiyondur. (Ascending) 
 
     var urunler = context.Urunler.Where(u => u.Id > 500 || u.UrunAdi.EndsWith("2")).OrderBy(u => u.UrunAdi).ThenBy(u => u.Fiyat).ThenBy(u => u.Id);
     await urunler.ToListAsync();
 
-### OrderByDescending
+### e.OrderByDescending
 Descending olarak sıralama yapmamızı sağlayan bir fonksiyondur.
 
 #### Method Syntax
@@ -116,7 +116,7 @@ Descending olarak sıralama yapmamızı sağlayan bir fonksiyondur.
                          select urun).ToListAsync();
  
 
-#### ThenByDescending
+#### f.ThenByDescending
 OrderByDescending üzerinde yapılan sıralama işlemini farklı kolonlarada uygulamamızı sağlayan bir fonksiyondur. (Ascending)
 
     var urunler = await context.Urunler.OrderByDescending(u => u.Id).ThenByDescending(u => u.Fiyat).ThenBy(u => u.UrunAdi).ToListAsync();
