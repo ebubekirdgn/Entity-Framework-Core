@@ -1,5 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
 ETicaretContext context = new();
+
+//1000 adet urun basma
+//for (int i = 0; i < 1000; i++)
+//{ 
+//    context.Add(new Urun { UrunAdi = "Urun" + i, Fiyat = i });
+
+//}
+//context.SaveChanges();
+//Console.WriteLine();
+
 #region Change Tracking Neydi?
 //Context nesnesi üzerinden gelen tüm nesneler/veriler otomatik olarak bir takip mekanizması tarafından izlenirler. İşte bu takip mekanizmasına Change Tracker denir. Change Traker ile nesneler üzerindeki değişiklikler/işlemler takip edilerek netice itibariyle bu işlemlerin fıtratına uygun sql sorgucukları generate edilir. İşte bu işleme de Change Tracking denir. 
 #endregion
