@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 ESirketDbContext context = new();
 
@@ -7,20 +9,20 @@ ESirketDbContext context = new();
 //Her iki entity'de Navigation Property ile birbirlerini tekil olarak referans ederek fiziksel bir ilişkinin olacağı ifade edilir.
 //One to One ilişki türünde, dependent entity'nin hangisi olduğunu default olarak belirleyebilmek pek kolay değildir. Bu durumda fiziksel olarak bir foreign key'e karşılık property/kolon tanımlayarak çözüm getirebiliyoruz.
 //Böylece foreign key'e karşılık property tanımlayarak lüzumsuz bir kolon oluşturmuş oluyoruz.
-internal class Calisan
-{
-    public int Id { get; set; }
-    public string Adi { get; set; }
-    public CalisanAdresi CalisanAdresi { get; set; }
-}
+// class Calisan
+//{
+//    public int Id { get; set; }
+//    public string Adi { get; set; }
+//    public CalisanAdresi CalisanAdresi { get; set; }
+//}
 
-internal class CalisanAdresi
-{
-    public int Id { get; set; }
-    public string Adres { get; set; }
-    public int CalisanId { get; set; }
-    public Calisan Calisan { get; set; }
-}
+// class CalisanAdresi
+//{
+//    public int Id { get; set; }
+//    public string Adres { get; set; }
+//    public int CalisanId { get; set; }
+//    public Calisan Calisan { get; set; }
+//}
 
 #endregion Default Convention
 
@@ -30,21 +32,21 @@ internal class CalisanAdresi
 //Foreign koonunun ismi default convention'ın dışında bir kolon olacaksa eğer ForeignKey attribute ile bunu bildirebiliriz.
 //Foreign Key kolonu oluşturulmak zorunda değildir.
 //1'e 1 ilişkide ekstradan foreign key kolonuna ihtiyaç olmayacağından dolayı dependent entity'deki id kolonunun hem foreign key hem de primary key olarak kullanmayı tercih ediyoruz ve bu duruma özen gösterilidir diyoruz.
-//class Calisan
-//{
-//    public int Id { get; set; }
-//    public string Adi { get; set; }
+class Calisan
+{
+    public int Id { get; set; }
+    public string Adi { get; set; }
 
-//    public CalisanAdresi CalisanAdresi { get; set; }
-//}
-//class CalisanAdresi
-//{
-//    [Key, ForeignKey(nameof(Calisan))]
-//    public int Id { get; set; }
-//    public string Adres { get; set; }
+    public CalisanAdresi CalisanAdresi { get; set; }
+}
+class CalisanAdresi
+{
+    [Key, ForeignKey(nameof(Calisan))]
+    public int Id { get; set; }
+    public string Adres { get; set; }
 
-//    public Calisan Calisan { get; set; }
-//}
+    public Calisan Calisan { get; set; }
+}
 
 #endregion Data Annotations
 
