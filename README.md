@@ -345,5 +345,4 @@ Sorgulama neticesinde elde edilen koleksiyonel veriler üzerinde iterasyonel ola
     
     });
 
-
 https://github.com/gncyyldz egitiminden alınıp read me kısmına cevrilmesi kendime aittir.
