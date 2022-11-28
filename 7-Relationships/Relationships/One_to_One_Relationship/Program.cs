@@ -31,29 +31,8 @@ ESirketDbContext context = new();
 //Navigation Property'ler tanımlanmalıdır.
 //Foreign koonunun ismi default convention'ın dışında bir kolon olacaksa eğer ForeignKey attribute ile bunu bildirebiliriz.
 //Foreign Key kolonu oluşturulmak zorunda değildir.
-//1'e 1 ilişkide ekstradan foreign key kolonuna ihtiyaç olmayacağından dolayı dependent entity'deki id kolonunun hem foreign key hem de primary key olarak kullanmayı tercih ediyoruz ve bu duruma özen gösterilidir diyoruz.
-class Calisan
-{
-    public int Id { get; set; }
-    public string Adi { get; set; }
-
-    public CalisanAdresi CalisanAdresi { get; set; }
-}
-class CalisanAdresi
-{
-    [Key, ForeignKey(nameof(Calisan))]
-    public int Id { get; set; }
-    public string Adres { get; set; }
-
-    public Calisan Calisan { get; set; }
-}
-
-#endregion Data Annotations
-
-#region Fluent API
-
-//Navigation Proeprtyler tanımlanmalı!
-//Fleunt API yönteminde entity'ler arasındaki ilişki context sınıfı içerisinde OnModelCreating fonksiyonun override edilerek metotlar aracılığıyla tasarlanması gerekmektedir. Yani tüm sorumluluk bu fonksiyon içerisindeki çalışmalardadır.
+//1'e 1 ilişkide ekstradan foreign key kolonuna ihtiyaç olmayacağından dolayı dependent entity'deki id kolonunun
+//hem foreign key hem de primary key olarak kullanmayı tercih ediyoruz ve bu duruma özen gösterilmelidir.
 //class Calisan
 //{
 //    public int Id { get; set; }
@@ -63,11 +42,31 @@ class CalisanAdresi
 //}
 //class CalisanAdresi
 //{
+//    [Key, ForeignKey(nameof(Calisan))]
 //    public int Id { get; set; }
 //    public string Adres { get; set; }
 
 //    public Calisan Calisan { get; set; }
 //}
+
+#endregion Data Annotations
+
+#region Fluent API
+
+//Navigation Proeprtyler tanımlanmalı!
+//Fleunt API yönteminde entity'ler arasındaki ilişki context sınıfı içerisinde OnModelCreating fonksiyonun override edilerek metotlar aracılığıyla tasarlanması gerekmektedir. Yani tüm sorumluluk bu fonksiyon içerisindeki çalışmalardadır.
+class Calisan
+{
+    public int Id { get; set; }
+    public string Adi { get; set; }
+    public CalisanAdresi CalisanAdresi { get; set; }
+}
+class CalisanAdresi
+{
+    public int Id { get; set; }
+    public string Adres { get; set; }
+    public Calisan Calisan { get; set; }
+}
 
 #endregion Fluent API
 
