@@ -81,14 +81,14 @@ internal class ESirketDbContext : DbContext
     }
 
     //Model'ların(entity) veritabanında generate edilecek yapıları bu fonksiyonda içerisinde konfigüre edilir
-    //protected override void OnModelCreating(ModelBuilder modelBuilder)
-    //{
-    //    modelBuilder.Entity<CalisanAdresi>()
-    //        .HasKey(c => c.Id);
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<CalisanAdresi>()
+            .HasKey(c => c.Id);
 
-    //    modelBuilder.Entity<Calisan>()
-    //         .HasOne(c => c.CalisanAdresi)
-    //         .WithOne(c => c.Calisan)
-    //         .HasForeignKey<CalisanAdresi>(c => c.Id);
-    //}
+        modelBuilder.Entity<Calisan>()
+             .HasOne(c => c.CalisanAdresi)
+             .WithOne(c => c.Calisan)
+             .HasForeignKey<CalisanAdresi>(c => c.Id);
+    }
 }
