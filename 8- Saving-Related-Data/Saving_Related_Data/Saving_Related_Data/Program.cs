@@ -5,12 +5,12 @@ ApplicationDbContext context = new();
 
 #region One to One İlişkisel Senaryolarda Veri Ekleme
 #region 1. Yöntem -> Principal Entity Üzerinden Dependent Entity Verisi Ekleme
-Person person = new();
-person.Name = "Hüseyin";
-person.Address = new() { PersonAddress = "Etimesgut/ANKARA" };
+//Person person = new();
+//person.Name = "Hüseyin";
+//person.Address = new() { PersonAddress = "Etimesgut/ANKARA" };
 
-await context.AddAsync(person);
-await context.SaveChangesAsync();
+//await context.AddAsync(person);
+//await context.SaveChangesAsync();
 #endregion
 
 //Eğer ki principal entity üzerinden ekleme gerçekleştiriliyorsa dependent entity nesnesi verilmek zorunda değildir! Amma velakin, dependent entity üzerinden ekleme işlemi gerçekleştiriliyorsa eğer burada principal entitynin nesnesine ihtiyacımız zaruridir.
@@ -26,49 +26,49 @@ await context.SaveChangesAsync();
 //await context.SaveChangesAsync();
 #endregion
 
-class Person
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
+//class Person
+//{
+//    public int Id { get; set; }
+//    public string Name { get; set; }
 
-    public Address Address { get; set; }
-}
-class Address
-{
-    public int Id { get; set; }
-    public string PersonAddress { get; set; }
+//    public Address Address { get; set; }
+//}
+//class Address
+//{
+//    public int Id { get; set; }
+//    public string PersonAddress { get; set; }
 
-    public Person Person { get; set; }
-}
-class ApplicationDbContext : DbContext
-{
-    public DbSet<Person> Persons { get; set; }
-    public DbSet<Address> Addresses { get; set; }
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        optionsBuilder.UseSqlServer("Data Source=DESKTOP-3DL43QU;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Database=ApplicationDb;");
-    }
+//    public Person Person { get; set; }
+//}
+//class ApplicationDbContext : DbContext
+//{
+//    public DbSet<Person> Persons { get; set; }
+//    public DbSet<Address> Addresses { get; set; }
+//    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+//    {
+//        optionsBuilder.UseSqlServer("Data Source=DESKTOP-3DL43QU;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Database=ApplicationDb;");
+//    }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.Entity<Address>()
-            .HasOne(a => a.Person)
-            .WithOne(p => p.Address)
-            .HasForeignKey<Address>(a => a.Id);
-    }
-}
+//    protected override void OnModelCreating(ModelBuilder modelBuilder)
+//    {
+//        modelBuilder.Entity<Address>()
+//            .HasOne(a => a.Person)
+//            .WithOne(p => p.Address)
+//            .HasForeignKey<Address>(a => a.Id);
+//    }
+//}
 #endregion
 
 #region One to Many İlişkisel Senaryolarda Veri Ekleme
 #region 1. Yöntem -> Principal Entity Üzerinden Dependent Entity Verisi Ekleme
 #region Nesne Referansı Üzerinden Ekleme
-//Blog blog = new() { Name = "Gencayyildiz.com Blog" };
-//blog.Posts.Add(new() { Title = "Post 1" });
-//blog.Posts.Add(new() { Title = "Post 2" });
-//blog.Posts.Add(new() { Title = "Post 3" });
+Blog blog = new() { Name = "Gencayyildiz.com Blog" };
+blog.Posts.Add(new() { Title = "Post 1" });
+blog.Posts.Add(new() { Title = "Post 2" });
+blog.Posts.Add(new() { Title = "Post 3" });
 
-//await context.AddAsync(blog);
-//await context.SaveChangesAsync();
+await context.AddAsync(blog);
+await context.SaveChangesAsync();
 #endregion
 #region Object Initializer Üzerinden Ekleme
 //Blog blog2 = new()
@@ -105,34 +105,34 @@ class ApplicationDbContext : DbContext
 //await context.SaveChangesAsync();
 
 #endregion
-//class Blog
-//{
-//    public Blog()
-//    {
-//        Posts = new HashSet<Post>();
-//    }
-//    public int Id { get; set; }
-//    public string Name { get; set; }
+class Blog
+{
+    public Blog()
+    {
+        Posts = new HashSet<Post>();
+    }
+    public int Id { get; set; }
+    public string Name { get; set; }
 
-//    public ICollection<Post> Posts { get; set; }
-//}
-//class Post
-//{
-//    public int Id { get; set; }
-//    public int BlogId { get; set; }
-//    public string Title { get; set; }
+    public ICollection<Post> Posts { get; set; }
+}
+class Post
+{
+    public int Id { get; set; }
+    public int BlogId { get; set; }
+    public string Title { get; set; }
 
-//    public Blog Blog { get; set; }
-//}
-//class ApplicationDbContext : DbContext
-//{
-//    public DbSet<Post> Posts { get; set; }
-//    public DbSet<Blog> Blogs { get; set; }
-//    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//    {
-//        optionsBuilder.UseSqlServer("Server=localhost, 1433;Database=ApplicationDb;User ID=SA;Password=1q2w3e4r+!");
-//    }
-//}
+    public Blog Blog { get; set; }
+}
+class ApplicationDbContext : DbContext
+{
+    public DbSet<Post> Posts { get; set; }
+    public DbSet<Blog> Blogs { get; set; }
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlServer("Data Source=DESKTOP-3DL43QU;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Database=ApplicationDb;");
+    }
+}
 #endregion
 
 #region Many to Many İlişkisel Senaryolarda Veri Ekleme
