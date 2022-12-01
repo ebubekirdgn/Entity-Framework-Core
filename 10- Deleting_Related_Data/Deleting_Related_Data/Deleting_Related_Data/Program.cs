@@ -163,8 +163,6 @@ class Author
 
     public ICollection<Book> Books { get; set; }
 }
-
-
 class ApplicationDbContext : DbContext
 {
     public DbSet<Person> Persons { get; set; }
