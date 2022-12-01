@@ -36,7 +36,7 @@ ApplicationDbContext context = new();
 #region Cascade Delete
 //Bu davranış modelleri Fluent API ile konfigüre edilebilmektedir.
 #region Cascade
-//Esas tablodan silinen veriyle karşı/bağımlı tabloda bulunan ilişkili verilerin silinmesini sağlar.
+//Esas tablodan silinen veriye karşı/bağımlı tabloda bulunan ilişkili verilerin silinmesini sağlar.
 #endregion
 
 #region SetNull
