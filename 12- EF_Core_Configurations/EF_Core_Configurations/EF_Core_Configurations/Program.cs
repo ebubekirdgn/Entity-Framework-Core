@@ -116,7 +116,7 @@ ApplicationDbContext context = new();
 #endregion
 
 #region HasConstraintName
-//EF Core üzerinden oluşturulkan constraint'lere default isim yerine özelleştirilmiş bir isim verebilmek için kullanılan yapılandırmadır.
+//EF Core üzerinden oluşturulan constraint'lere default isim yerine özelleştirilmiş bir isim verebilmek için kullanılan yapılandırmadır.
 #endregion
 
 #region HasData
@@ -387,7 +387,7 @@ class ApplicationDbContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Server=localhost, 1433;Database=ApplicationDb;User ID=SA;Password=1q2w3e4r+!");
+        optionsBuilder.UseSqlServer("Data Source=DESKTOP-3DL43QU;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Database=ApplicationDb;");
     }
 }
 
