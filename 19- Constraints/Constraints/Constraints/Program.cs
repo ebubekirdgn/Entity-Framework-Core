@@ -74,7 +74,7 @@ ApplicationDbContext context = new();
 
 //[Index(nameof(Blog.Url), IsUnique = true)]
 class Blog
-{
+{  
     public int Id { get; set; }
     public string BlogName { get; set; }
     public string Url { get; set; }
