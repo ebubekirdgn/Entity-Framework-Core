@@ -169,6 +169,12 @@ Yapılan sorguda tek bir verinin gelmesi amaçlanıyorsa First ya da FirstOrDefa
 [resim]: https://github.com/ebubekirdgn/Entity-Framework-Core/blob/main/5-%20Querying/Querying/Querying/Single%2C%20SingleOrDefault%2C%20First%2C%20FirstOrDefault%20Fonksiyonlar%C4%B1%20Kar%C5%9F%C4%B1la%C5%9Ft%C4%B1rma.png "Resim Başlığı"
 
 
+![alt yazı][resim]
+
+[resim]: https://github.com/ebubekirdgn/WebApi-NLayered/blob/main/images/nlayer-2.png "Resim Başlığı"
+
+
+
 #region FindAsync
  Find fonksiyonu, primary key kolonuna özel hızlı bir şekilde sorgulama yapmamızı sağlayan bir fonksiyondur.
  
