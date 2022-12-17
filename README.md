@@ -1,6 +1,6 @@
 # Querying
 ### En Temel Basit Bir Sorgulama Nasıl Yapılır?
-  1. Method Syntax
+  1. Method Syntax 
 > var urunler = await context.Urunler.ToListAsync();
   2. Query Syntax
 >   var urunler2 = await (from urun in context.Urunler
