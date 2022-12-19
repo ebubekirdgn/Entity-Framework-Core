@@ -190,7 +190,7 @@ Sorgu neticesinde gelen verilerden en sonuncusunu getirir. Eğer ki hiç veri ge
 Sorgu neticesinde gelen verilerden en sonuncusunu getirir. Eğer ki hiç veri gelmiyorsa null döner. OrderBy kullanılması mecburidir.
 
     var urun = await context.Urunler.OrderBy(u => u.Fiyat).LastOrDefaultAsync(u => u.Id > 55);
- 
+
 
 ##3. Diğer Sorgulama Fonksiyonları
 #### CountAsync
@@ -333,7 +333,6 @@ Gruplama yapmamızı sağlayan fonksiyondur.
 #### Foreach Fonksiyonu
 Bir sorgulama fonksiyonu felan değildir!
 Sorgulama neticesinde elde edilen koleksiyonel veriler üzerinde iterasyonel olarak dönmemizi ve teker teker verileri elde edip işlemler yapabilmemizi sağlayan bir fonksiyondur. foreach döngüsünün metot halidir!
-
 
 
     foreach (var item in datas)
