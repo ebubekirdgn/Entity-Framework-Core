@@ -192,7 +192,7 @@ ApplicationDbContext context = new();
 //            };
 
 //var datas = await query.ToListAsync();
-#endregion
+#endregion 
 
 #region Collection Selector'da Where Kullanma Durumu
 //var query = from order in context.Orders
