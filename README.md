@@ -72,7 +72,7 @@ IQueryable çalışmalarında ilgili kod yazıldığı noktada tetiklenmez/çal�
     var urunler = await context.Urunler.Where(u => u.Id > 500).ToListAsync();
     var urunler = await context.Urunler.Where(u =>u.UrunAdi.StartsWith("a")).ToListAsync();
     Console.WriteLine();
- 
+
 ### Query Syntax
 
     var urunler = from urun in context.Urunler
