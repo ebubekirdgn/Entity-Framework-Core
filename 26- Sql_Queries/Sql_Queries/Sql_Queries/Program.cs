@@ -46,6 +46,7 @@ Console.WriteLine();
 //    .ToListAsync();
 #endregion
 #region Örnek 4
+//Bu daha performanslıdır diğerlerine nazaran.
 //SqlParameter personId = new("PersonId", "3");
 //var persons = await context.Persons.FromSql($"EXECUTE dbo.sp_GetAllPersons {personId}")
 //    .ToListAsync();
