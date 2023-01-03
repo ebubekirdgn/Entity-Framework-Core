@@ -25,10 +25,11 @@ ApplicationDbContext context = new();
 #endregion
 #region Parametreli Sorgu Oluşturma
 #region Örnek 1
-//int personId = 3;
-//var persons = await context.Persons.FromSql($"SELECT * FROM Persons Where PersonId = {personId}")
-//    .ToListAsync();
+int personId = 3;
+var persons = await context.Persons.FromSql($"SELECT * FROM Persons Where PersonId = {personId}")
+    .ToListAsync();
 
+Console.WriteLine();
 //Burada sorguya geçirilen personId değişkeni arkaplanda bir DbParameter türüne dönüştürülerek o şekilde sorguya dahil edilmektedir.
 #endregion
 #region Örnek 2
@@ -135,7 +136,7 @@ class ApplicationDbContext : DbContext
     }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Server=localhost, 1433;Database=ApplicationDB;User ID=SA;Password=1q2w3e4r+!;TrustServerCertificate=True");
+        optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;Database=ApplicationDB;");
     }
 }
 
