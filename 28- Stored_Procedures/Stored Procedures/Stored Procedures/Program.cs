@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Reflection;
 
@@ -83,7 +84,7 @@ public class Order
     public Person Person { get; set; }
 }
 
-[NotMapped]
+[NotMapped] // tablo degil demektir.
 public class PersonOrder
 {
     public string Name { get; set; }
