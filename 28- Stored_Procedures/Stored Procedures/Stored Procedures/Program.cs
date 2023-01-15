@@ -24,7 +24,7 @@ ApplicationDbContext context = new();
 
 #region Stored Procedure'ü Kullanma
 
-//SP'ı kullanabilmek için bir entity'e ihtiyacımız vardır. Bu entity'nin DbSet propertysi ollarak context nesnesine de eklenmesi gerekmektedir.
+//SP'ı kullanabilmek için bir entity'e ihtiyacımız vardır. Bu entity'nin DbSet propertysi olarak context nesnesine de eklenmesi gerekmektedir.
 //Bu DbSet properytysi üzerinden FromSql fonksiyonunu kullanarak 'Exec ....' komutu eşliğinde SP yapılanmasını çalıştırıp sorgu neticesini elde edebilirsiniz.
 
 #region FromSql
